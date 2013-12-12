@@ -42,6 +42,13 @@ namespace StaffWizard
             Gweek4.Visibility = Visibility.Collapsed;
             Gweek5.Visibility = Visibility.Collapsed;
             Gweek6.Visibility = Visibility.Collapsed;
+            cbMonday1.ItemsSource = DayScheduleList;
+            cbTuesday1.ItemsSource = DayScheduleList;
+            cbWednesday1.ItemsSource = DayScheduleList;
+            cbThursday1.ItemsSource = DayScheduleList;
+            cbFriday1.ItemsSource = DayScheduleList;
+            cbSaturday1.ItemsSource = DayScheduleList;
+            cbSunday1.ItemsSource = DayScheduleList;
             GStartWeek.Visibility = Visibility.Collapsed;
         }
 
