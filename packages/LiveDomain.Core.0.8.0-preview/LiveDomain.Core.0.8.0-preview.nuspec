@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
+  <metadata>
+    <id>LiveDomain.Core</id>
+    <version>0.8.0-preview</version>
+    <title>#liveDB Engine</title>
+    <authors>Robert Friberg</authors>
+    <owners>Robert Friberg</owners>
+    <licenseUrl>http://livedomain.codeplex.com/license</licenseUrl>
+    <projectUrl>http://livedomain.codeplex.com/</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Build faster systems faster with #liveDB, an in-memory native .NET database engine implemented using the Prevalent System Architecture. http://livedb.devrex.se</description>
+    <summary>This package adds a reference to the LiveDomain.Core library containing the #liveDb in-memory database engine and the #liveDB cluster client library.</summary>
+    <releaseNotes>Version 0.8 introduces a new experimental Child Model feature allowing reuse of existing models using a composite design pattern.</releaseNotes>
+    <copyright>Robert Friberg</copyright>
+    <tags>ddd, prevalence, database, in-memory, memory based architeture</tags>
+  </metadata>
+</package>

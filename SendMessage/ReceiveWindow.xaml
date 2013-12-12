@@ -1,0 +1,50 @@
+﻿<Window x:Class="SendMessage.ReceiveWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ReceiveWindow" Height="1080" Width="1920" WindowState="Maximized">
+    <Grid>
+        <TabControl Height="904" HorizontalAlignment="Left" Margin="1403,10,0,0" Name="tabControl3" VerticalAlignment="Top" Width="400">
+            <TabItem  Header="Nya" Name="tabItem3">
+                <Grid>
+                    <DataGrid AutoGenerateColumns="False" CanUserDeleteRows="True" EnableColumnVirtualization="False" Height="866" HorizontalAlignment="Left" IsEnabled="True" IsReadOnly="False" IsSynchronizedWithCurrentItem="{x:Null}" Margin="0,-4,0,0" Name="InboxData" SelectedIndex="-1" SelectionChanged="InboxData_SelectionChanged" VerticalAlignment="Top" Width="384">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding SentDate}" Header="Skickat" />
+                            <DataGridTextColumn Binding="{Binding Sender}" Header="Avsändare" />
+                            <DataGridTextColumn Binding="{Binding Readed}" Header="Läst" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Lästa" Name="tabItem4">
+                <Grid>
+                    <DataGrid AutoGenerateColumns="false" Grid.ColumnSpan="2" Height="866" HorizontalAlignment="Left" Name="ReadData" SelectionChanged="ReadData_SelectionChanged" VerticalAlignment="Top" Width="384">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding SentDate}" Header="Skickat" />
+                            <DataGridTextColumn Binding="{Binding Sender}" Header="Avsändare" />
+                            <DataGridTextColumn Binding="{Binding Readed}" Header="Läst" />
+                            <DataGridTextColumn Binding="{Binding ReadDate}" Header="Datum Läst" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Skickat" Name="tabItem1" IsEnabled="True">
+                <Grid>
+                    <DataGrid AutoGenerateColumns="false" Height="866" HorizontalAlignment="Left" Name="SentData" VerticalAlignment="Top" Width="384" SelectionChanged="SentData_SelectionChanged">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding SentDate}" Header="Skickat" />
+                            <DataGridTextColumn Binding="{Binding Recipient}" Header="Mottagare" />
+                            <DataGridTextColumn Binding="{Binding Readed}" Header="Läst" />
+                            <DataGridTextColumn Binding="{Binding ReadDate}" Header="Datum Läst" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <TextBox AcceptsReturn="True" AcceptsTab="True" Height="438" IsReadOnly="True" Margin="10,100,568,0" Name="MessageBox1" VerticalAlignment="Top" />
+        <Label Content="Meddelande" FontSize="10" Height="28" HorizontalAlignment="Left" Margin="10,66,0,0" Name="label1" VerticalAlignment="Top" Width="91" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="10,37,0,0" Name="textBlock1" Text="" VerticalAlignment="Top" Width="186" />
+        <Label Content="Avsändare" FontSize="10" Height="28" HorizontalAlignment="Left" Margin="12,10,0,0" Name="label2" VerticalAlignment="Top" Width="91" />
+        <Button Content="Markera som läst" Height="41" HorizontalAlignment="Left" Margin="1225,544,0,0" Name="button2" VerticalAlignment="Top" Width="105" Click="button2_Click" />
+        <Button Content="Skicka" Height="41" HorizontalAlignment="Left" Margin="1114,544,0,0" Name="button1" VerticalAlignment="Top" Width="105" Click="button1_Click_1" />
+    </Grid>
+</Window>

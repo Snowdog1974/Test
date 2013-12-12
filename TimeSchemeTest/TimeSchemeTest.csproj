@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D0DD4652-9D8C-4865-98CE-E57EDE9C10A3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TimeSchemeTest</RootNamespace>
+    <AssemblyName>TimeSchemeTest</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="SystemAndersson.Anet.BI.LoginSQL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Assemblies\SystemAndersson.Anet.BI.LoginSQL.dll</HintPath>
+    </Reference>
+    <Reference Include="SystemAndersson.Anet.BI.TimeSchedule">
+      <HintPath>..\..\Assemblies\SystemAndersson.Anet.BI.TimeSchedule.dll</HintPath>
+    </Reference>
+    <Reference Include="SystemAndersson.Anet.BI.Utilities, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Assemblies\SystemAndersson.Anet.BI.Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="SystemAndersson.Anet.Common.Contract">
+      <HintPath>..\..\Assemblies\SystemAndersson.Anet.Common.Contract.dll</HintPath>
+    </Reference>
+    <Reference Include="SystemAndersson.Anet.Common.UI">
+      <HintPath>..\..\Assemblies\SystemAndersson.Anet.Common.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="SystemAndersson.Anet.Common.Utility">
+      <HintPath>..\..\Assemblies\SystemAndersson.Anet.Common.Utility.dll</HintPath>
+    </Reference>
+    <Reference Include="SystemAndersson.Anet.Production.Common">
+      <HintPath>..\..\Assemblies\SystemAndersson.Anet.Production.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="SystemAndersson.Anet.ServiceHost.Win">
+      <HintPath>..\..\Assemblies\SystemAndersson.Anet.ServiceHost.Win.dll</HintPath>
+    </Reference>
+    <Reference Include="SystemAndersson.Anet.Terminal.Client.Logic">
+      <HintPath>..\..\Assemblies\SystemAndersson.Anet.Terminal.Client.Logic.dll</HintPath>
+    </Reference>
+    <Reference Include="SystemAndersson.Anet.Terminal.Client.Service">
+      <HintPath>..\..\Assemblies\SystemAndersson.Anet.Terminal.Client.Service.dll</HintPath>
+    </Reference>
+    <Reference Include="SystemAndersson.Anet.Terminal.Client.UI">
+      <HintPath>..\..\Assemblies\SystemAndersson.Anet.Terminal.Client.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="SystemAndersson.Anet.Terminal.Database">
+      <HintPath>..\..\Assemblies\SystemAndersson.Anet.Terminal.Database.dll</HintPath>
+    </Reference>
+    <Reference Include="SystemAndersson.Anet.Terminal.ListReport">
+      <HintPath>..\..\Assemblies\SystemAndersson.Anet.Terminal.ListReport.dll</HintPath>
+    </Reference>
+    <Reference Include="SystemAndersson.Anet.Terminal.Logic">
+      <HintPath>..\..\Assemblies\SystemAndersson.Anet.Terminal.Logic.dll</HintPath>
+    </Reference>
+    <Reference Include="SystemAndersson.Anet.Terminal.Support">
+      <HintPath>..\..\Assemblies\SystemAndersson.Anet.Terminal.Support.dll</HintPath>
+    </Reference>
+    <Reference Include="SystemAndersson.Anet.Terminal.TimeTrans">
+      <HintPath>..\..\Assemblies\SystemAndersson.Anet.Terminal.TimeTrans.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Handler\DateScheduleHandler.cs" />
+    <Compile Include="Handler\DaySchduleHandler.cs" />
+    <Compile Include="Handler\TimeCodeHandler.cs" />
+    <Compile Include="NewDateSchedule.xaml.cs">
+      <DependentUpon>NewDateSchedule.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NewDaySchedule.xaml.cs">
+      <DependentUpon>NewDaySchedule.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModelBaseAdmin.cs" />
+    <Compile Include="ViewModel\NewDayScheduleViewModel.cs" />
+    <Compile Include="ViewModel\MainViewModel.cs" />
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="NewDateSchedule.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NewDaySchedule.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,8 @@
+﻿<Window x:Class="CalendarTest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="676" Width="736">
+    <Grid>
+        <Calendar Height="170" HorizontalAlignment="Left" Margin="244,98,0,0" Name="calendar1" VerticalAlignment="Top" Width="180" />
+    </Grid>
+</Window>

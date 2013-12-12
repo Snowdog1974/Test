@@ -1,0 +1,69 @@
+﻿<Window x:Class="Filestreamtest.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:Filestreamtest"
+        Title="Window1" Height="1050" Width="1755" Closing="Window_Closing" WindowState="Maximized" AllowsTransparency="True" WindowStyle="None" Background="White">
+    <Grid OpacityMask="{x:Null}">
+        <Grid.Resources>
+           
+            <local:ImageConverter x:Key="imageConverter"/>
+        </Grid.Resources>
+        <StackPanel Height="75" HorizontalAlignment="Left" Margin="11,10,0,0" Name="stackPanel1" VerticalAlignment="Top" Width="338" Orientation="Horizontal">
+            <Button Content="Put" Height="23" Name="button1" Width="75" Click="button1_Click" />
+            <Button Content="Get" Height="23" Name="button2" Width="75" Click="button2_Click" />
+            <Button Content="Delete" Height="23" Name="button3" Width="75" Click="button3_Click" />
+            <Button Content="Update" Height="23" Name="button4" Width="75" />
+        </StackPanel>
+        <TabControl Height="769" HorizontalAlignment="Left" Margin="12,127,0,0" Name="tabControl1" VerticalAlignment="Top" Width="1306" SelectionChanged="tabControl1_SelectionChanged">
+            <TabItem Header="Word &amp; Excel" Name="tabItem1" IsEnabled="True">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="380*" />
+                        <RowDefinition Height="357*" />
+                    </Grid.RowDefinitions>
+                    <DocumentViewer Height="697" HorizontalAlignment="Left" Margin="6,34,0,0" Name="dv1" VerticalAlignment="Top" Width="1255" Grid.RowSpan="2" />
+                    <TextBox Height="29" HorizontalAlignment="Left" Margin="6,6,0,0" Name="SelectedFileTextBox" VerticalAlignment="Top" Width="276" />
+                    <Button Content="Bläddra.." Height="23" HorizontalAlignment="Left" Margin="288,6,0,0" Name="button6" VerticalAlignment="Top" Width="75" Click="button6_Click" />
+                    <Button Content="FileStream Word" Height="23" HorizontalAlignment="Left" Margin="369,5,0,0" Name="button8" VerticalAlignment="Top" Width="107" Click="button8_Click" Visibility="Hidden" />
+                    <Button Content="Open in Word" Height="23" HorizontalAlignment="Left" Margin="482,5,0,0" Name="button10" VerticalAlignment="Top" Width="96" Click="button10_Click" />
+                    <Button Content="Open Filestream in Word" Height="23" HorizontalAlignment="Left" Margin="584,5,0,0" Name="button12" VerticalAlignment="Top" Width="153" Click="button12_Click" Visibility="Hidden" />
+                    <Button Content="FileStream Excel" Height="23" HorizontalAlignment="Left" Margin="743,5,0,0" Name="button14" VerticalAlignment="Top" Width="107" Click="button14_Click" Visibility="Hidden" />
+                    <Button Content="Open in Excel" Height="23" HorizontalAlignment="Left" Margin="856,5,0,0" Name="button17" VerticalAlignment="Top" Width="96" Click="button17_Click" />
+                    <Button Content="Open Filestream in Excel" Height="23" HorizontalAlignment="Left" Margin="958,5,0,0" Name="button19" VerticalAlignment="Top" Width="153" IsCancel="True" Click="button19_Click" Visibility="Hidden" />
+                </Grid>
+            </TabItem>
+            <TabItem Header="Media" Name="tabItem2" Visibility="Visible">
+                <Grid>
+                    <MediaElement Height="634" HorizontalAlignment="Left" Margin="6,40,0,0" Name="mediaElement1" VerticalAlignment="Top" Width="1255" />
+                    <Button Content="Bläddra..." Height="23" HorizontalAlignment="Left" Margin="288,5,0,0" Name="button7" VerticalAlignment="Top" Width="75" Click="button7_Click" />
+                    <Button Content="FileStream bild" Height="23" HorizontalAlignment="Right" Margin="0,6,717,0" Name="button9" VerticalAlignment="Top" Width="102" Click="button9_Click" Visibility="Hidden" />
+                    <TextBox Height="29" HorizontalAlignment="Left" Margin="6,5,0,0" Name="SelectedFileTextBoxMedia" VerticalAlignment="Top" Width="276" />
+                    <Button Content="FileStream film" Height="23" HorizontalAlignment="Left" Margin="369,5,0,0" Name="button13" VerticalAlignment="Top" Width="102" Click="button13_Click" Visibility="Hidden" />
+                    <Button Content="Stop" Height="23" HorizontalAlignment="Left" Margin="504,689,0,0" Name="button20" VerticalAlignment="Top" Width="75" Click="button20_Click_1" Visibility="Hidden" />
+                    <Button Content="Play" Height="23" HorizontalAlignment="Left" Margin="585,689,0,0" Name="button21" VerticalAlignment="Top" Width="75" Click="button21_Click" Visibility="Hidden" />
+                    <ProgressBar Height="10" HorizontalAlignment="Left" Margin="6,689,0,0" Name="progressBar1" VerticalAlignment="Top" Width="483" Maximum="{Binding ElementName=mediaElement1, Path=NaturalDuration, Mode=OneWay}" Value="{Binding ElementName=mediaElement1, Path=Position.Seconds, Mode=OneWay}" Visibility="Hidden" />
+                    <Button Content="Pause" Height="23" HorizontalAlignment="Left" Margin="666,689,0,0" Name="button22" VerticalAlignment="Top" Width="75" Click="button22_Click" Visibility="Hidden" />
+                    <Label Height="28" HorizontalAlignment="Left" Margin="369,5,0,0" Name="label1" VerticalAlignment="Top" Width="75" Content="{Binding ElementName=mediaElement1, Path=MediaClock, Mode=OneWay}"/>
+                    <Label Content="Label" Height="28" HorizontalAlignment="Left" Margin="450,6,0,0" Name="label2" VerticalAlignment="Top" Width="140" />
+                </Grid>
+            </TabItem>
+            <TabItem Header="Pdf" Name="tabItem3">
+                <Grid Background="White">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="76*" />
+                        <ColumnDefinition Width="1191*" />
+                    </Grid.ColumnDefinitions>
+                    <Button Content="Open in Reader" Height="23" HorizontalAlignment="Left" Margin="378,15,0,0" Name="button11" VerticalAlignment="Top" Width="93" Click="button11_Click" Grid.Column="1" />
+                    <WindowsFormsHost Margin="1,44,1,1" Name="windowsFormsHost1" Grid.ColumnSpan="2" Background="#FF801C1C" />
+                   
+                    <TextBox Height="29" HorizontalAlignment="Left" Margin="10,10,0,0" Name="SelectedFileTextBoxPdf" VerticalAlignment="Top" Width="276" Grid.ColumnSpan="2" />
+                    <Button Content="Bläddra.." Height="23" HorizontalAlignment="Left" Margin="216,15,0,0" Name="button15" VerticalAlignment="Top" Width="75" Grid.Column="1" Click="button15_Click" />
+                    <Button Content="FileStream" Grid.Column="1" Height="23" HorizontalAlignment="Right" Margin="0,15,846,0" Name="button16" VerticalAlignment="Top" Width="75" Click="button16_Click" Visibility="Hidden" />
+                    <Button Content="Open Filestream in Reader" Grid.Column="1" Height="23" HorizontalAlignment="Left" Margin="477,15,0,0" Name="button18" VerticalAlignment="Top" Width="153" Click="button18_Click" Visibility="Hidden" />
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <DataGrid AutoGenerateColumns="True" Height="855" HorizontalAlignment="Left" Margin="1324,36,0,0" Name="dataGrid1" VerticalAlignment="Top" Width="397" SelectionChanged="dataGrid1_SelectionChanged"  />
+        <Button Content="Button" Height="23" HorizontalAlignment="Left" Margin="1238,36,0,0" Name="button5" VerticalAlignment="Top" Width="75" Click="button5_Click" Visibility="Hidden" />
+    </Grid>
+</Window>
